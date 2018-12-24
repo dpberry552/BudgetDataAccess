@@ -60,10 +60,18 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\BusinessObject.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CheckDetail.cs" />
+    <Compile Include="Models\SubCategory.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\TransCatRlship.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTests\CategoryTests.cs" />
+    <Compile Include="UnitTests\CheckDetailTests.cs" />
+    <Compile Include="UnitTests\SubCategoryTests.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

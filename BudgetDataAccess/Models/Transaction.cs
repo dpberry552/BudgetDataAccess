@@ -10,7 +10,7 @@ using System.Data;
 namespace BudgetDataAccess.Models
 {
     [Table("Transaction")]
-    public class Transaction : BusinessObject
+    public class Transaction : BusinessObject<Transaction>
     {
         public string Description { get; set; }
         public string Type { get; set; }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace BudgetDataAccess.Models
 {
     [Table("Category")]
-    public class Category : BusinessObject
+    public class Category : BusinessObject<Category>
     {
         public int AccountID { get; set; }
         public string Description { get; set; }

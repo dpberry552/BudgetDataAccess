@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace BudgetDataAccess.Models
 {
     [Table("CheckDetail")]
-    public class CheckDetail : BusinessObject
+    public class CheckDetail : BusinessObject<CheckDetail>
     {
         public int TransID { get; set; }
         public int Number { get; set; }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace BudgetDataAccess.Models
 {
     [Table("TransCatRlship")]
-    public class TransCatRlship : BusinessObject
+    public class TransCatRlship : BusinessObject<TransCatRlship>
     {
         public int TransID { get; set; }
         public int CatID { get; set; }

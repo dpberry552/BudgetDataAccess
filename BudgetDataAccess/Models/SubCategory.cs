@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace BudgetDataAccess.Models
 {
     [Table("SubCategory")]
-    public class SubCategory : BusinessObject
+    public class SubCategory : BusinessObject<SubCategory>
     {
         public int CategoryID { get; set; }
         public string Description { get; set; }

@@ -23,6 +23,11 @@ namespace BudgetDataAccess.Models
             return db.Get<T>(id);
         }
 
+        public static IEnumerable<BusinessObject<T>> GetAll(IDbConnection db)
+        {
+            return db.GetAll<T>();
+        }
+
         public static void Persist(IDbConnection db, T t)
         {
             t.UpdateDate = DateTime.Now;

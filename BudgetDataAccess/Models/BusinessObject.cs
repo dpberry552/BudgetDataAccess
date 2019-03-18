@@ -12,11 +12,9 @@ namespace BudgetDataAccess.Models
         where T : BusinessObject<T>
     {
         [Key]
-        public int? Id { get; set; }
-        [Write(false)]
-        public DateTime CreateDate { get; set; }
-        [Write(false)]
-        public DateTime UpdateDate { get; set; }
+        public int Id { get; set; }
+        public DateTime? CreateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
 
         public static BusinessObject<T> GetById(IDbConnection db, int id)
         {
@@ -28,16 +26,22 @@ namespace BudgetDataAccess.Models
             return db.GetAll<T>();
         }
 
+        public static void Delete(IDbConnection db, int id)
+        {
+            T obj = db.Get<T>(id);
+            db.Delete<T>(obj);
+        }
+
         public static void Persist(IDbConnection db, T t)
         {
             t.UpdateDate = DateTime.Now;
-            if(t.Id != null)
+            if (t.Id != 0)
             {
                 db.Update<T>(t);
             }
             else
             {
-                t.CreateDate = DateTime.Now;
+                t.CreateDate = t.UpdateDate;
                 db.Insert<T>(t);
             }
         }

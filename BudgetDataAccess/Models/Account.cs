@@ -13,6 +13,6 @@ namespace BudgetDataAccess.Models
         public string Description { get; set; }
         public string Type { get; set; }
         public string Institution { get; set; }
-        public decimal Balance { get; set; }
+        public double Balance { get; set; }
     }
 }

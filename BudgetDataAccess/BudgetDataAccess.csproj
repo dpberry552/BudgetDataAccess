@@ -58,6 +58,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Connections\DBConnection.cs" />
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\BudgetUsercs.cs" />
     <Compile Include="Models\BusinessObject.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CheckDetail.cs" />
@@ -74,7 +75,9 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

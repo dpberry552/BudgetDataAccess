@@ -58,7 +58,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Connections\DBConnection.cs" />
     <Compile Include="Models\Account.cs" />
-    <Compile Include="Models\BudgetUsercs.cs" />
+    <Compile Include="Models\BudgetUser.cs" />
     <Compile Include="Models\BusinessObject.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CheckDetail.cs" />

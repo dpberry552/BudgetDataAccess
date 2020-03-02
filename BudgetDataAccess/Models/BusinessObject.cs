@@ -1,4 +1,5 @@
 ﻿using Dapper.Contrib.Extensions;
+using MiniProfiler.Integrations;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -41,8 +42,21 @@ namespace BudgetDataAccess.Models
             }
             else
             {
-                t.CreateDate = t.UpdateDate;
-                db.Insert<T>(t);
+                var factory = new SqlServerDbConnectionFactory(db.ConnectionString);
+                using (var connection = ProfiledDbConnectionFactory.New(factory, CustomDbProfiler.Current))
+                {
+                    t.CreateDate = t.UpdateDate;
+                    try
+                    {
+                        db.Insert<T>(t);
+                    }
+                    catch (Exception)
+                    {
+                        var commands = CustomDbProfiler.Current.ProfilerContext.GetCommands();
+                        Console.WriteLine(commands);
+                        throw;
+                    }
+                }
             }
         }
     }

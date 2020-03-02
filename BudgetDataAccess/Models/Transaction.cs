@@ -1,5 +1,4 @@
 ﻿using Dapper.Contrib.Extensions;
-using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +8,10 @@ using System.Data;
 
 namespace BudgetDataAccess.Models
 {
-    [Table("Transaction")]
+    [Table("AccountTransaction")]
     public class Transaction : BusinessObject<Transaction>
     {
+        public int AccountId { get; set; }
         public string Description { get; set; }
         public string Type { get; set; }
         public decimal Amount { get; set; }

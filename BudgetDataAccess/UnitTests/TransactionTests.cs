@@ -40,5 +40,16 @@ namespace BudgetDataAccess.UnitTests
                 Assert.That(t.Count == 3);
             }
         }
+
+        [Test]
+        public void CanGetTransactionLines()
+        {
+            using(var db = DBConnection.GetConnection())
+            {
+                var t = Transaction.GetLines(db, 1);
+                Assert.That(t.Count() == 2);
+                Assert.That(t.First().Amount == 50);
+            }
+        }
     }
 }

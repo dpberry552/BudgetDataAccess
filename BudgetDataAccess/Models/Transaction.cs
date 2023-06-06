@@ -18,6 +18,7 @@ namespace BudgetDataAccess.Models
         public decimal Amount { get; set; }
         public DateTime ActualDateTime { get; set; }
         public DateTime PostDateTime { get; set; }
+        [Computed]
         public List<TransactionLine> TransactionLines { get; set; }
 
         public static IEnumerable<Transaction> GetByAccountId(IDbConnection db, int accountId)
